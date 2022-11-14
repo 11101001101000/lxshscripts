@@ -1,0 +1,6 @@
+#!/bin/bash
+fn=$1
+i=$(cat $2)
+ap=$(echo -e "$fn" | cut -d"
+" -f-$(echo -e "$fn" | echo -e "$fn" | grep -n . | tail -n1 | cut -d":" -f2- ))
+echo -e "$ap$i"

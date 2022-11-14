@@ -1,0 +1,7 @@
+#!/bin/bash
+cat $1 | cat -n | grep "     "$2 | cut -d \  -f6- | cut -d"	" -f2- | tr \ , \\n | cat -n
+echo "enter word num"
+read wd
+o1=$(cat $1 | cat -n | grep "     "$2 | cut -d \  -f6- | cut -d"	" -f2- | cut -d \  -f-$(($wd-1)))
+o2=$(cat $1 | cat -n | grep "     "$2 | cut -d \  -f6- | cut -d"	" -f2- | cut -d \  -f$(($wd+1))-)
+echo -e "$o1$3$o2"

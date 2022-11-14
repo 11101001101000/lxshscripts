@@ -1,0 +1,9 @@
+#!/bin/bash
+ln=$(cat "$1" | grep -n . | grep $2 | cut -d: -f2- | tr \ , \\n | grep -n .)
+echo -e "$ln"
+echo "enter word num"
+read wd
+echo "enter word"
+read wda
+o1=$(echo -e "$ln" | grep -v $wd:$wda | cut -d: -f2-)
+echo -e "$(echo -e "$o1" | tr -d \\n)"
