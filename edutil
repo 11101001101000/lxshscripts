@@ -1,7 +1,0 @@
-#!/bin/bash
-ln=$(cat "$1" | grep -n . | grep ^$2: | cut -d: -f2- | tr \ , \\n | grep -n .)
-echo -e "$ln"
-echo "enter word num"
-read wd
-o1=$(echo -e "$ln" | grep -v ^$wd: | cut -d: -f2-)
-echo -e "$(echo -e "$o1" | tr -d \\n)"
