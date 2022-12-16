@@ -1,6 +1,7 @@
 #!/bin/bash
+echo usage\: "(var name) (string)"
 fn=$1
-i=$(cat $2)
+i=$(echo -e "$2")
 ap=$(echo -e "$fn" | cut -d"
-" -f-$(wc -l "$fn"))
+" -f-$(echo -e "$fn" | wc -l))
 echo -e "$ap$i"
